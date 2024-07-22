@@ -51,6 +51,27 @@ svg {
     100% { transform: rotate(360deg); }
   }
   
+  .not-found {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.emoji {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.no-def {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 20px 24px;
+}
+
+.msg {
+    color: var(--text-color);
+    font-size: 14px;
+    margin: 24px;
+}
 /* 
 ======================
 HOVER EFFECTS

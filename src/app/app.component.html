@@ -2,26 +2,10 @@
   <app-header (toggleThemeEvent)="toggleTheme()"></app-header>
   <app-search (searchResult)="handleSearchResult($event)"></app-search>
   <!-- conditionally render data or no results -->
-   @if(searchResult.length > 0){
+   @if(searchResult && searchResult.length > 0){
      <app-word-details [data]="searchResult"></app-word-details>
    }
    @else {
-    @if (!searchResult) {
-    <div class="not-found">
-      <p class="emoji">😕</p>
-      <p class="no-def">No Definitions Found</p>
-      <p class="msg">Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</p>
-    </div>
-  }
    }
-   <!-- <div *ngIf="searchResult && searchResult.length > 0; else noResults">
-    <app-word-details [data]="searchResult"></app-word-details>
-  </div> -->
-  
-  <ng-template #noResults>
-    <div class="no-results">
-      <p>😕</p>
-      <p>No meaning found.</p>
-    </div>
-  </ng-template>
+ 
 </div>

@@ -26,6 +26,7 @@ export class SearchComponent implements OnInit{
   showErrorMsg:boolean = false;
   fetchError:boolean = false;
   isLoading:boolean = false;
+  notFound:boolean = false;
 
   @Output()
   searchResult = new EventEmitter<any>();
@@ -42,6 +43,7 @@ export class SearchComponent implements OnInit{
 
     this.showErrorMsg = false;
     this.isLoading = true;
+
     this.apiService.fetchDefinition(this.searchTerm.trim())
     .pipe(catchError(error => {
       this.isLoading = false;
@@ -51,8 +53,14 @@ export class SearchComponent implements OnInit{
     .subscribe(data => {
       this.isLoading = false;
       this.fetchError = false;
-      console.log(data)
-      this.searchResult.emit(data)
+      
+      if(data.length === 0){
+        this.notFound = true;
+      }
+      else {
+        this.data = data
+        this.searchResult.emit(data)
+      }
       this.searchTerm = ''
     }) 
     

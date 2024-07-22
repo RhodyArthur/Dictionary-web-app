@@ -1,80 +1,80 @@
 @if(data){
-<div class="audio-container">
-    <div class="word-container">
-        <p class="word">{{data[0].word}}</p>
-
-        @if(!data[0].phonetic){
-            <p class="phonics">{{data[0].phonetics[1].text}}</p>
-        }
-        @else {
-            <p class="phonics">{{data[0].phonetic}}</p>
-        }
-    </div>
-    <div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 75 75" (click)="playAudio()" class="play-btn">
-            <g fill="#A445ED" fill-rule="evenodd"><circle cx="37.5" cy="37.5" r="37.5" opacity=".25"/>
-            <path d="M29 27v21l21-10.5z"/></g></svg>
-    </div>
-</div>
-
-
-<div class="noun-container">
-    <p class="noun">{{data[0].meanings[0].partOfSpeech}} </p>
-    <hr>
-</div>
-<p class="meaning">Meaning</p>
-<div class="meaning-container">
-    <ul>
-    @for (definition of data[0].meanings[0].definitions; track $index) {
-        <div>
-            <li class="word-meaning">{{definition.definition}}</li>
+    <div class="audio-container">
+        <div class="word-container">
+            <p class="word">{{data[0].word}}</p>
+    
+            @if(!data[0].phonetic){
+                <p class="phonics">{{data[0].phonetics[1].text}}</p>
+            }
+            @else {
+                <p class="phonics">{{data[0].phonetic}}</p>
+            }
         </div>
-    }  
-</ul>
-</div>
-
-
-<!-- synonyms -->
- <div class="synonyms-container">
-    <p class="synonyms">Synonyms</p>
-    @for (item of data[0].meanings[0].synonyms; track $index) {
-    <p class="synonym">{{item}}</p>
-    }
- </div>
-
- <div class="verb-container">
-    @if (data[0].meanings[0].partOfSpeech === 'verb') {}
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 75 75" (click)="playAudio()" class="play-btn">
+                <g fill="#A445ED" fill-rule="evenodd"><circle cx="37.5" cy="37.5" r="37.5" opacity=".25"/>
+                <path d="M29 27v21l21-10.5z"/></g></svg>
+        </div>
+    </div>
+    
+    
     <div class="noun-container">
         <p class="noun">{{data[0].meanings[0].partOfSpeech}} </p>
         <hr>
     </div>
-
-    <div class="sub-div">
-        <p class="meaning">Meaning</p>
-        <div class="example-container">
-            <div class="list-meaning">
-                <ul>
-                    <li class="example-meaning">To type on a computer keyboard.</li>
-                </ul>
+    <p class="meaning">Meaning</p>
+    <div class="meaning-container">
+        <ul>
+        @for (definition of data[0].meanings[0].definitions; track $index) {
+            <div>
+                <li class="word-meaning">{{definition.definition}}</li>
             </div>
-            <div class="example">
-                @for (definition of data[0].meanings[0].definitions; track $index) {
-                    @if (definition.example) {
-                        <p>"{{definition.example}}"</p>
+        }  
+    </ul>
+    </div>
+    
+    
+    <!-- synonyms -->
+     <div class="synonyms-container">
+        <p class="synonyms">Synonyms</p>
+        @for (item of data[0].meanings[0].synonyms; track $index) {
+        <p class="synonym">{{item}}</p>
+        }
+     </div>
+    
+     <div class="verb-container">
+        @if (data[0].meanings[0].partOfSpeech === 'verb') {}
+        <div class="noun-container">
+            <p class="noun">{{data[0].meanings[0].partOfSpeech}} </p>
+            <hr>
+        </div>
+    
+        <div class="sub-div">
+            <p class="meaning">Meaning</p>
+            <div class="example-container">
+                <div class="list-meaning">
+                    <ul>
+                        <li class="example-meaning">To type on a computer keyboard.</li>
+                    </ul>
+                </div>
+                <div class="example">
+                    @for (definition of data[0].meanings[0].definitions; track $index) {
+                        @if (definition.example) {
+                            <p>"{{definition.example}}"</p>
+                        }
                     }
-                }
+                </div>
             </div>
         </div>
+     </div>
+     <hr class="bar">
+     <div class="source">
+        <p>Source</p>
+        <div>
+        <a href="" target="_blank">{{data[0].sourceUrls}}
+        </a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" (click)="copyLink()">
+            <path fill="none" stroke="#838383" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.09 3.545H2.456A1.455 1.455 0 0 0 1 5v6.545A1.455 1.455 0 0 0 2.455 13H9a1.455 1.455 0 0 0 1.455-1.455V7.91m-5.091.727 7.272-7.272m0 0H9m3.636 0V5"/></svg>
+     </div>
     </div>
- </div>
- <hr class="bar">
- <div class="source">
-    <p>Source</p>
-    <div>
-    <a href="" target="_blank">{{data[0].sourceUrls}}
-    </a>
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" (click)="copyLink()">
-        <path fill="none" stroke="#838383" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.09 3.545H2.456A1.455 1.455 0 0 0 1 5v6.545A1.455 1.455 0 0 0 2.455 13H9a1.455 1.455 0 0 0 1.455-1.455V7.91m-5.091.727 7.272-7.272m0 0H9m3.636 0V5"/></svg>
- </div>
-</div>
-}
+    }

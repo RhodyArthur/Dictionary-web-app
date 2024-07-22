@@ -16,3 +16,10 @@
         <p class="spinner"></p>
     }
     
+    @if (notFound) {
+        <div class="not-found">
+          <p class="emoji">😕</p>
+          <p class="no-def">No Definitions Found</p>
+          <p class="msg">Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</p>
+        </div>
+      }
