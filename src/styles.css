@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* serif */
+/* @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap'); */
+
+/* monospace */
+
+@font-face {
+    font-family: "incosolata";
+    src: url("./assets/fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf")
+      format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "inter";
+    src: url("./assets/fonts/inter/Inter-VariableFont_slnt\,wght.ttf")
+      format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "lora";
+    src: url("/assets/fonts/lora/Lora-VariableFont_wght.ttf") format("truetype"),
+      url("/assets/fonts/lora/Lora-Italic-VariableFont_wght.ttf")
+        format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: unset;
+    padding: unset;
+}
+
+
+:root {
+    --white: #FFFFFF;
+    --active-color: #A445ED;
+    --error-color: #FF5252;
+    --text-color: #757575;
+    --text-inputColor: #2D2D2D;
+    --input-bg: #F4F4F4;
+    --darkMode-inputBg: #1F1F1F;
+    --darkMode-bg: #050505;
+    --hr: #3A3A3A;
+    --bar: #E9E9E9;
+
+     /* fonts */
+  --font-sans-serif: "inter", sans-serif;
+  --font-serif: "lora", serif;
+  --font-mono: "inconsolata", monospace;
+
+}
+body {
+    font-family: var(--font-sans-serif);
+}
+.dark-mode {
+    background-color: var(--darkMode-bg);
+    color: var(--white);
+}
+
+/* Specific styling for input elements in dark mode */
+body.dark-mode .search__content{
+    background-color: var(--darkMode-inputBg);
+}
+body.dark-mode .search__content input:-internal-autofill-selected{
+    background-color: var(--darkMode-inputBg);
+}
+
+body.dark-mode .word {
+    color: var(--white);
+}
+
+body.dark-mode .dropdown-menu {
+    background-color: var(--darkMode-bg);
+    box-shadow: 0px 0px 26px 3px var(--active-color);
+  }
+
+body.dark-mode .fonts p,
+body.dark-mode .example-meaning,
+body.dark-mode .search__content input,
+body.dark-mode .source a{
+    color: var(--white);
+}
+
+body.dark-mode svg#moon path
+{
+    stroke: #A445ED;
+}

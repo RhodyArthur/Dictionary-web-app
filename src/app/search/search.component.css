@@ -1,0 +1,63 @@
+.search__content {
+    width: 87%;
+    height: 48px;
+    margin-inline: 24px;
+    border-radius: 16px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--active-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+input {
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: var(--text-inputColor);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 70%;
+}
+
+svg {
+    cursor: pointer;
+}
+
+
+.error-outline{
+    border: 1px solid var(--error-color);
+}
+
+.error {
+    color: var(--error-color);
+    margin: 3px 24px;
+}
+
+.spinner {
+    border: 12px solid var(--bar); 
+    border-top: 12px solid var(--active-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    margin:120px auto; 
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+/* 
+======================
+HOVER EFFECTS
+======================
+
+ */
+
+ .dark-mode input{
+    background-color: var(--darkMode-inputBg);
+}

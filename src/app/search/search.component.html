@@ -1,0 +1,18 @@
+<div class="search__content" [ngClass]="{'error-outline':showErrorMsg}">
+   
+    <input type="text" name="search" id="search" placeholder="Search for any word..." [(ngModel)]="searchTerm" (keyup.enter)="searchWord()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18" (click)="searchWord()">
+        <path fill="none" stroke="#A445ED" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m12.663 12.663 3.887 3.887M1 7.664a6.665 6.665 0 1 0 13.33 0 6.665 6.665 0 0 0-13.33 0Z"/></svg>
+    </div>
+    @if(showErrorMsg){
+        <p class="error">Whoops, can't be empty...</p>
+    }
+    <!-- display error message if unable to fetch data from api -->
+    @if(fetchError){
+        <p class="error">Unable to fetch data from api</p>
+    }
+    <!-- loading indicator -->
+    @if(isLoading){
+        <p class="spinner"></p>
+    }
+    
