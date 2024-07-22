@@ -56,8 +56,10 @@ export class SearchComponent implements OnInit{
       
       if(data.length === 0){
         this.notFound = true;
+        this.data = []
       }
       else {
+        this.notFound = false;
         this.data = data
         this.searchResult.emit(data)
       }

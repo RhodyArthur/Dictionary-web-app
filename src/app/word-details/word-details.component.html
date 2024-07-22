@@ -54,7 +54,12 @@
             <div class="example-container">
                 <div class="list-meaning">
                     <ul>
-                        <li class="example-meaning">To type on a computer keyboard.</li>
+                        @for (definition of data[0].meanings[0].definitions; track $index) {
+                            <div>
+                                <li class="example-meaning">{{definition.definition}}</li>
+                            </div>
+                        } 
+                
                     </ul>
                 </div>
                 <div class="example">
