@@ -57,9 +57,11 @@
   --font-serif: "lora", serif;
   --font-mono: "inconsolata", monospace;
 
+  --global-font-variable: var(--font-sans-serif);
+
 }
 body {
-    font-family: var(--font-sans-serif);
+    font-family: var(--global-font-variable);
 }
 .dark-mode {
     background-color: var(--darkMode-bg);
